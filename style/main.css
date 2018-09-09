@@ -1,0 +1,212 @@
+/*Reset*/
+* {
+    box-sizing:border-box;
+}
+
+/* Faire accepter des nouveaux éléments structuraux de HTML5 sur les vieux navigateurs Internet Explorer */
+article, aside, details, figcaption, figure, footer, header, main, nav, section {
+    display: block;
+}
+
+
+/**********************************************************************************************************************/
+/***Pour le header ***/
+header {
+    width:100vw;
+    position:relative;
+}
+
+/*Pour aligner le texte dans les li*/
+/*Aussi dimension du nav*/
+header nav {
+    text-align:center;
+    height:8vh;
+}
+
+/*Pour enlever le padding des unordered list*/
+header ul {
+    padding:0;
+    height:0;
+    margin-top:0;
+}
+
+/*Enlever les points, liste horizontale, dimension des li, couleurs des li, font des li*/
+header li {
+    list-style-type:none;
+    float:left;
+    width:19vw; /*chaque li a environ 20% du width du width du header*/
+    height:8vh;
+    /*background-color: #512a0e;*/
+    /*font-family: 'Lato', sans-serif;*/
+    font-family: 'Marck Script', cursive;
+
+
+    background: -moz-linear-gradient(284deg, rgba(81,42,14,1) 0%, rgba(69,99,128,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(81,42,14,1)), color-stop(100%, rgba(69,99,128,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(284deg, rgba(81,42,14,1) 0%, rgba(69,99,128,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(284deg, rgba(81,42,14,1) 0%, rgba(69,99,128,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(284deg, rgba(81,42,14,1) 0%, rgba(69,99,128,1) 100%); /* ie10+ */
+    background: linear-gradient(166deg, rgba(81,42,14,1) 0%, rgba(69,99,128,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#512a0e', endColorstr='#456380',GradientType=0 ); /* ie6-9 */
+}
+
+/*Centrer le texte verticallement et enlever les soulignements pour les liens*/
+header a {
+    line-height:8vh;
+    text-decoration:none;
+    font-size:2rem;
+}
+
+
+/*Style pour lien*/
+header a:link {
+    color:#fabc01;
+}
+
+/*Style pour lien*/
+header a:visited {
+    color:#fabc01;
+}
+
+/*Style pour lien*/
+header a:hover {
+    color:white;
+}
+
+header img{
+    position:absolute;
+    height: 50vh;
+    width:95vw;
+    top:8vh;
+    z-index:1;
+    opacity:0.95;
+}
+
+header div{
+    height:60vh;
+
+}
+
+header h1{
+    position:absolute;
+    font-family: 'Henny Penny', cursive;
+    top:12vh;
+    z-index:40;
+    padding:0;
+    margin:0;
+    font-size:20vh;
+    left:20vw;
+    color:#fabc01;
+}
+
+/**********************************************************************************************************************/
+
+/**********************************************************************************************************************/
+/***Pour le footer ***/
+footer {
+    width:95vw;
+    position:relative;
+    background-color: #1b2432;
+
+}
+
+/*Pour aligner le texte dans les li*/
+/*Aussi dimension du nav*/
+footer nav {
+    position:absolute;
+    text-align:center;
+    height:8vh;
+    top:17vh;
+}
+
+/*Pour enlever le padding des unordered list*/
+footer ul {
+    padding:0;
+    height:0;
+    margin-top:0;
+}
+
+/*Enlever les points, liste horizontale, dimension des li, couleurs des li, font des li*/
+footer li {
+    list-style-type:none;
+    float:left;
+    width:19vw; /*chaque li a environ 20% du width du width du header*/
+    height:8vh;
+    /*background-color: #512a0e;*/
+    /*font-family: 'Lato', sans-serif;*/
+    background-color: #1b2432;
+}
+
+footer{
+    position:relative;
+    height:25vh;
+}
+
+/*Centrer le texte verticallement et enlever les soulignements pour les liens*/
+footer a {
+    line-height:8vh;
+    text-decoration:none;
+    font-size:2rem;
+}
+
+
+/*Style pour lien*/
+footer a:link {
+    color:#fabc01;
+}
+
+/*Style pour lien*/
+footer a:visited {
+    color:#fabc01;
+}
+
+/*Style pour lien*/
+footer a:hover {
+    color:white;
+}
+/**********************************************************************************************************************/
+
+/**********************************************************************************************************************/
+/***Pour la gallerie ***/
+
+main#gallerie {
+    position:relative;
+}
+
+/*Redimensionner les images*/
+main#gallerie img{
+    width:30vw;
+    height:30vh;
+    margin:5%;
+}
+
+main#gallerie a.lightbox{
+    display:none;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.5);
+    z-index:999;
+    position:fixed;
+    top:0;
+    right:0;
+}
+
+main#gallerie a.lightbox img{
+    width:75%;
+    height:75%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-60%,-60%);
+}
+
+
+main#gallerie a.lightbox:target {
+    display:block;
+}
+
+main#gallerie h3{
+
+}
+
+/**********************************************************************************************************************/
