@@ -214,9 +214,19 @@ main#gallerie h3{
 /**********************************************************************************************************************/
 /*** Pour le store ***/
 
-main#store img{
+main#store div#wands img{
     width:25vw;
-    height:25vh;
+    height:35vh;
+}
+
+main#store div#brooms img{
+    width:30vw;
+    height:23vh;
+}
+
+main#store div#books img{
+    width:20vw;
+    height:35vh;
 }
 
 

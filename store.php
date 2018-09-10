@@ -13,7 +13,7 @@ require("$top_view");
 <main id="store">
     <h2><?= $pageName?></h2>
 
-    <div>
+    <div id="wands">
         <h3>Wands</h3>
         <p><?= $wands['description']?></p>
         <?php foreach($wands as $wandName => $details) {?>
@@ -27,7 +27,7 @@ require("$top_view");
         <?php }?>
     </div>
 
-    <div>
+    <div id="brooms">
         <h3>Brooms</h3>
         <p><?= $brooms['description']?></p>
         <?php foreach($brooms as $broomName => $details) {?>
@@ -40,7 +40,7 @@ require("$top_view");
         <?php }?>
     </div>
 
-    <div>
+    <div id="books">
         <h3>Books</h3>
         <p><?= $books['description']?></p>
         <?php foreach($books as $bookName => $details) {?>
