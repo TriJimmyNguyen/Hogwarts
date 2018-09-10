@@ -27,6 +27,8 @@ require("$top_view");
         <?php }?>
     </div>
 
+    <div class="seperator"></div>
+
     <div id="brooms">
         <h3>Brooms</h3>
         <p><?= $brooms['description']?></p>
@@ -40,6 +42,8 @@ require("$top_view");
         <?php }?>
     </div>
 
+    <div class="seperator"></div>
+
     <div id="books">
         <h3>Books</h3>
         <p><?= $books['description']?></p>
@@ -48,7 +52,7 @@ require("$top_view");
                 <h4><?= $details['name']?></h4>
                 <p>Course: <?= $details['course']?></p>
                 <p>Description: <?= $details['description']?></p>
-                <p>Price: <?= $details['price']?></p>
+                <p>Price: <?= $details['price']?> $</p>
                 <img src="<?= $details['imagePath']?>" alt="<?= $details['name']?>"/>
             <?php }?>
         <?php }?>

@@ -16,8 +16,9 @@ require("$top_view");
 ?>
 
 <h2><?=$pageName?></h2>
-<?php require_once('views/loginout_form.php'); ?>
-
+<main id="login">
+    <?php require_once('views/loginout_form.php'); ?>
+</main>
 <?php
 
 $bottom_view = BOTTOM_VIEW_PATH;

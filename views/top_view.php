@@ -5,6 +5,7 @@ require_once("constant.php");
 
 
 ?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8"/>
