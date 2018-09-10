@@ -1,3 +1,7 @@
+<!--
+    Cette page a ete pris des demonstrations du cours de PHP
+-->
+
 <?php
 /**
  * Assure la fonctionalité de login/logout.

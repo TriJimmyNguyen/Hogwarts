@@ -1,37 +1,6 @@
-<?php
-///**
-// * Created by PhpStorm.
-// * User: tnguyen
-// * Date: 06/09/2018
-// * Time: 10:24 AM
-// */
-//
-//
-//function authenticate($usernameEntered, $passwordEntered){
-//    $userArray = array('alice', 'bob');
-//    $passwordArray = array('abc123', 'abc123');
-//    $isValid = false;
-//
-//    foreach ($userArray as $indexOfUserArray=> $user)
-//    {
-//        if($usernameEntered == $user)
-//        {
-//           foreach($passwordArray as $indexOfPasswordArray => $password)
-//           {
-//               if($passwordEntered == $password){
-//                   $isValid = true;
-//               }
-//           }
-//        }
-//    }
-//
-//    return $isValid;
-//}
-//
-////pour tester
-////echo authenticate('alice', 'abc123');
-//
-//?>
+<!--
+    Cette page a ete pris des demonstrations du cours de PHP
+-->
 
 <?php
 /**

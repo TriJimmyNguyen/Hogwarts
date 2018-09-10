@@ -1,5 +1,7 @@
-<?php
-?>
+<!--
+    Cette page a ete pris des demonstrations du cours de PHP
+
+-->
 <div id="loginout">
     <?php if (user_is_logged()) { ?>
         <form method="post" id="logoutform">
@@ -8,9 +10,9 @@
     <?php } else { ?>
 
         <form method="post" id="loginform">
-            <label for="username">Identifiant :</label>
+            <label for="username">Username :</label>
             <input type="text" name="username" id="username" />
-            <label for="password">Mot de passe: </label>
+            <label for="password">Password: </label>
             <input type="password" name="password" id="password" />
             <input type="submit" name="login" value="Connexion"/>
         </form>
