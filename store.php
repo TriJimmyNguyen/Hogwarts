@@ -16,35 +16,45 @@ require("$top_view");
     <div>
         <h3>Wands</h3>
         <p><?= $wands['description']?></p>
+        <?php foreach($wands as $wandName => $details) {?>
+            <?php if($wandName != 'description') {?>
+                <h4><?= $details['name'];?></h4>
+                <p>Woodtype: <?= $details['woodType']?></p>
+                <p>Description: <?= $details['description']?></p>
+                <p>Price: <?= $details['price']?> $</p>
+                <img src="<?=$details['imagePath']?>" alt="<?=$details['name']?>"/>
+            <?php }?>
+        <?php }?>
     </div>
 
     <div>
         <h3>Brooms</h3>
         <p><?= $brooms['description']?></p>
+        <?php foreach($brooms as $broomName => $details) {?>
+            <?php if($broomName != 'description'){?>
+                <h4><?= $details['name']?></h4>
+                <p>Description: <?= $details['description']?></p>
+                <p>Price: <?= $details['price']?> $</p>
+                <img src="<?=$details['imagePath']?>" alt="<?=$details['name']?>"/>
+            <?php }?>
+        <?php }?>
     </div>
 
     <div>
         <h3>Books</h3>
         <p><?= $books['description']?></p>
+        <?php foreach($books as $bookName => $details) {?>
+            <?php if($bookName != 'description'){?>
+                <h4><?= $details['name']?></h4>
+                <p>Course: <?= $details['course']?></p>
+                <p>Description: <?= $details['description']?></p>
+                <p>Price: <?= $details['price']?></p>
+                <img src="<?= $details['imagePath']?>" alt="<?= $details['name']?>"/>
+            <?php }?>
+        <?php }?>
     </div>
 </main>
 
-<!--<div>-->
-<!---->
-<!---->
-<!--    --><?php //foreach($wands as $key => $value){?>
-<!--        <img src="--><?php //if($key != 'description') { echo $value['imagePath'];}?><!--" alt="wand"/>-->
-<!--    --><?php //}?>
-<!---->
-<!---->
-<!--    --><?php //foreach($brooms as $key => $value){?>
-<!--        <img src="--><?php //if($key != 'description') { echo $value['imagePath'];}?><!--" alt="wand"/>-->
-<!--    --><?php //}?>
-<!---->
-<!--    --><?php //foreach($books as $key => $value){?>
-<!--        <img src="--><?php //if($key != 'description') { echo $value['imagePath'];}?><!--" alt="wand"/>-->
-<!--    --><?php //}?>
-<!--</div>-->
 
 <?php
 
