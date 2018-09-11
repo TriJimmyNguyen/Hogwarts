@@ -19,4 +19,6 @@ define('PRIVATE_PATH', "private_page.php");
 define('TOP_VIEW_PATH','views\top_view.php');
 define('BOTTOM_VIEW_PATH','views\bottom_view.php');
 
+define('LIMIT_WORDS_DESCRIPTION', 40);
+
 ?>

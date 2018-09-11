@@ -151,11 +151,17 @@ var_dump($_SESSION);
                         <p>Woodtype: <?= $details['woodType']?></p>
                         <p>Description:
                             <?php
-                            if(strlen($details['description']) < 300) {
+
+                            if(str_word_count($details['description']) < LIMIT_WORDS_DESCRIPTION) {
                                 echo $details['description'];
                             }
                             else{
-                                echo substr($details['description'], 0, 300) . "...";
+                                $subarray = str_word_count($details['description'], 1);
+
+                                for($i = 0; $i < LIMIT_WORDS_DESCRIPTION; $i++){
+                                    echo $subarray["$i"] . " ";
+
+                                }
                             }
                             ?>
                         </p>

@@ -261,6 +261,9 @@ main#store img.productPicture{
 main#store div#wands img{
     width:22vw;
     height:35vh;
+    position:absolute;
+    top:45%;
+    left:0;
 }
 
 main#store div#brooms img{
@@ -283,6 +286,7 @@ main#store div#wands img[src="images/gold_coin.jpg"]{
     display:inline-block;
     width:1.5vw;
     height:1.5vw;
+    position:relative;
 
 }
 
@@ -306,7 +310,9 @@ main#store div#wands div.wandProduct{
     border:0.25vw solid #fabc01;
     padding:0.5vw;
     vertical-align:top;
-    height:90vh;
+    height:75vh;
+    position:relative;
+
 }
 
 
@@ -326,5 +332,6 @@ main#store div#books div.bookProduct{
     border:0.25vw solid #fabc01;
     padding:0.5vw;
 }
+
 
 /**********************************************************************************************************************/

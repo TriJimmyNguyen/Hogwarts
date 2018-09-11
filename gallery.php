@@ -57,12 +57,12 @@ require("$top_view");
 <h2><?= $pageName?></h2>
 <main id="gallerie">
     <?php foreach($galleryPictures as $key => $value){?>
-        <a href="#<?= $key . "_lightbox" ?>">
-            <img src="<?= $value['imagePath']?>" alt="<?= $value['description']?>"/>
-        </a>
-        <a href="#<?=$key ?>" class="lightbox" id="<?= $key . "_lightbox" ?>">
-            <img src="<?= $value['imagePath']?>" alt="<?= $value['description']?>"/>
-        </a>
+        <a href="#<?= $key . "_lightbox" ?>"><!--
+         --><img src="<?= $value['imagePath']?>" alt="<?= $value['description']?>"/><!--
+     --></a>
+        <a href="#<?=$key ?>" class="lightbox" id="<?= $key . "_lightbox" ?>"><!--
+         --><img src="<?= $value['imagePath']?>" alt="<?= $value['description']?>"/><!--
+     --></a>
     <?php }?>
 </main>
 
