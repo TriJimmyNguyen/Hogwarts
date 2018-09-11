@@ -109,7 +109,7 @@ Professor Filius Flitwick taught Charms for many years. It was rumoured that his
     ),
     'bookDefenceAgainstDarkArts' => array(
         'name' => "Book for Defence Against Dark Arts",
-        'description' => "Defence Against the Dark Arts (sometimes written as DADA) is a subject taught at Hogwarts School of Witchcraft and Wizardry and Ilvermorny School of Witchcraft and Wizardry[1]. In this class students learn how to magically defend themselves against Dark Creatures, the Dark Arts, and other dark charms. Offensive magic is also taught in this class, such as how to duel, which requires the use of both offensive and defensive magic.
+        'description' => "Defence Against the Dark Arts (sometimes written as DADA) is a subject taught at Hogwarts School of Witchcraft and Wizardry and Ilvermorny School of Witchcraft and Wizardry. In this class students learn how to magically defend themselves against Dark Creatures, the Dark Arts, and other dark charms. Offensive magic is also taught in this class, such as how to duel, which requires the use of both offensive and defensive magic.
 The subject is core class at Hogwarts. The position of Defence Against the Dark Arts professor here was once rumoured to be jinxed, as no teacher could hold the post for more than a year. Tom Marvolo Riddle jinxed the position because Dumbledore did not give him the job when he applied for it.[3] The fact that no teacher has lasted longer then year meant that the subject has had numerous Professors.
 Ilvermorny began teaching the subject in the 17th century. Also Harry Potterwould occasionally deliver Defence Against the Dark Arts lectures at Hogwarts.
 ",
@@ -119,7 +119,7 @@ Ilvermorny began teaching the subject in the 17th century. Also Harry Potterwoul
     ),
     'bookFlying' => array(
         'name' => "Book for Flying",
-        'description' => "Flying, also known as Broom Flight Class,[1] is a subject taught at Hogwarts School of Witchcraft and Wizardry. It is taught by Madam Hooch to first-years only. The subject teaches students how to fly broomsticks. In some lessons, the use of enchanted rings was used to guide flight",
+        'description' => "Flying, also known as Broom Flight Class, is a subject taught at Hogwarts School of Witchcraft and Wizardry. It is taught by Madam Hooch to first-years only. The subject teaches students how to fly broomsticks. In some lessons, the use of enchanted rings was used to guide flight",
         'course' => "Flying",
         'price' => "110",
         'imagePath' => "images/book_flying.jpg",

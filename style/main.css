@@ -15,16 +15,19 @@ div.wrapper{
 }
 
 div.wrapper h2{
+    font-family: 'Henny Penny', cursive;
     position:relative;
     left:-1vw;
 }
 
 div.wrapper h3{
+    font-family: 'Henny Penny', cursive;
     position:relative;
     left:-0.5vw;
 }
 
 div.wrapper h4{
+    font-family: 'Henny Penny', cursive;
     position:relative;
     left:-0.25vw;
 }
@@ -239,18 +242,18 @@ main#gallerie h3{
 
 main#store img.productPicture{
     position:relative;
-    left:30vw;
+
 }
 
 
 main#store div#wands img{
-    width:25vw;
+    width:22vw;
     height:35vh;
 }
 
 main#store div#brooms img{
-    width:30vw;
-    height:23vh;
+    width:22vw;
+    height:11vh;
 }
 
 main#store div#books img{
@@ -259,7 +262,7 @@ main#store div#books img{
 }
 
 main#store div.seperator{
-    border-bottom:2px solid #173980;
+    border-bottom:0.30vw solid #173980;
     padding-bottom:4%;
 }
 
@@ -283,5 +286,30 @@ main#store div#books img[src="images/gold_coin.jpg"]{
     height:1.5vw;
 }
 
+main#store div#wands div.wandProduct{
+    display:inline-block;
+    width:25vw;
+    margin:2vw;
+    border:0.25vw solid #fabc01;
+    padding:0.5vw;
+}
+
+
+main#store div#brooms div.broomProduct{
+    display:inline-block;
+    width:25vw;
+    margin:2vw;
+    border:0.25vw solid #fabc01;
+    padding:0.5vw;
+}
+
+
+main#store div#books div.bookProduct{
+    display:inline-block;
+    width:25vw;
+    margin:2vw;
+    border:0.25vw solid #fabc01;
+    padding:0.5vw;
+}
 
 /**********************************************************************************************************************/

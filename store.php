@@ -142,24 +142,35 @@ var_dump($_SESSION);
             <p><?= $wands['description']?></p>
             <?php foreach($wands as $wandName => $details) {?>
                 <?php if($wandName != 'description') {?>
-                    <h4><?= $details['name'];?></h4>
-                    <p>Woodtype: <?= $details['woodType']?></p>
-                    <p>Description: <?= $details['description']?></p>
-                    <p>Price: <?= $details['price']?><img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>
-                    <img src="<?=$details['imagePath']?>" alt="<?=$details['name']?>" class="productPicture"/>
-                    <?php if(user_is_logged()){?>
-                        <form method="post">
-                            <input type="hidden" name="wandName" value="<?= $details['name']?>" />
-                            <span class="btn-group">
-                                <button type="submit"  name="action" value="+">
-                                    +
-                                </button>
-                                <button type="submit"  name="action" value="-">
-                                   -
-                                </button>
-                            </span>
-                        </form>
-                    <?php }?>
+                    <div class="wandProduct">
+                        <h4><?= $details['name'];?></h4>
+                        <p>Woodtype: <?= $details['woodType']?></p>
+                        <p>Description:
+                            <?php
+                            if(strlen($details['description']) < 300) {
+                                echo $details['description'];
+                            }
+                            else{
+                                echo substr($details['description'], 0, 300) . "...";
+                            }
+                            ?>
+                        </p>
+                        <p>Price: <?= $details['price']?><img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>
+                        <img src="<?=$details['imagePath']?>" alt="<?=$details['name']?>" class="productPicture"/>
+                        <?php if(user_is_logged()){?>
+                            <form method="post">
+                                <input type="hidden" name="wandName" value="<?= $details['name']?>" />
+                                <span class="btn-group">
+                                    <button type="submit"  name="action" value="+">
+                                        +
+                                    </button>
+                                    <button type="submit"  name="action" value="-">
+                                       -
+                                    </button>
+                                </span>
+                            </form>
+                        <?php }?>
+                    </div>
                 <?php }?>
             <?php }?>
         </div>
@@ -172,23 +183,34 @@ var_dump($_SESSION);
             <p><?= $brooms['description']?></p>
             <?php foreach($brooms as $broomName => $details) {?>
                 <?php if($broomName != 'description'){?>
-                    <h4><?= $details['name']?></h4>
-                    <p>Description: <?= $details['description']?></p>
-                    <p>Price: <?= $details['price']?><img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>
-                    <img src="<?=$details['imagePath']?>" alt="<?=$details['name']?>"  class="productPicture"/>
-
-                    <form method="post">
-                        <input type="hidden" name="broomName" value="<?= $details['name']?>" />
-                        <span class="btn-group">
-                            <button type="submit"  name="action" value="+">
-                                +
-                            </button>
-                            <button type="submit"  name="action" value="-">
-                               -
-                            </button>
-                        </span>
-                    </form>
-
+                    <div class="broomProduct">
+                        <h4><?= $details['name']?></h4>
+                        <p>Description:
+                            <?php
+                            if(strlen($details['description']) < 300) {
+                                echo $details['description'];
+                            }
+                            else{
+                                echo substr($details['description'], 0, 300) . "...";
+                            }
+                            ?>
+                        </p>
+                        <p>Price: <?= $details['price']?><img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>
+                        <img src="<?=$details['imagePath']?>" alt="<?=$details['name']?>"  class="productPicture"/>
+                        <?php if(user_is_logged()){?>
+                            <form method="post">
+                                <input type="hidden" name="broomName" value="<?= $details['name']?>" />
+                                <span class="btn-group">
+                                    <button type="submit"  name="action" value="+">
+                                        +
+                                    </button>
+                                    <button type="submit"  name="action" value="-">
+                                       -
+                                    </button>
+                                </span>
+                            </form>
+                        <?php }?>
+                    </div>
                 <?php }?>
             <?php }?>
             <div class="seperator"></div>
@@ -201,25 +223,36 @@ var_dump($_SESSION);
             <p><?= $books['description']?></p>
             <?php foreach($books as $bookName => $details) {?>
                 <?php if($bookName != 'description'){?>
-                    <h4><?= $details['name']?></h4>
-                    <p>Course: <?= $details['course']?></p>
-                    <p>Description: <?= $details['description']?></p>
-                    <p>Price: <?= $details['price']?><img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>
-                    <img src="<?= $details['imagePath']?>" alt="<?= $details['name']?>"  class="productPicture"/>
-
-                    <form method="post">
-                        <input type="hidden" name="bookName" value="<?= $details['name']?>" />
-                        <span class="btn-group">
-                            <button type="submit"  name="action" value="+">
-                                +
-                            </button>
-                            <button type="submit"  name="action" value="-">
-                               -
-                            </button>
-                        </span>
-                    </form>
-
-                <?php }?>
+                  <div class="bookProduct">
+                        <h4><?= $details['name']?></h4>
+                        <p>Course: <?= $details['course']?></p>
+                        <p>Description:
+                            <?php
+                                if(strlen($details['description']) < 300) {
+                                    echo $details['description'];
+                                }
+                                else{
+                                    echo substr($details['description'], 0, 300) . "...";
+                                }
+                            ?>
+                        </p>
+                        <p>Price: <?= $details['price']?><img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>
+                        <img src="<?= $details['imagePath']?>" alt="<?= $details['name']?>"  class="productPicture"/>
+                        <?php if(user_is_logged()){?>
+                            <form method="post">
+                                <input type="hidden" name="bookName" value="<?= $details['name']?>" />
+                                <span class="btn-group">
+                                    <button type="submit"  name="action" value="+">
+                                        +
+                                    </button>
+                                    <button type="submit"  name="action" value="-">
+                                       -
+                                    </button>
+                                </span>
+                            </form>
+                        <?php }?>
+                    </div>
+                    <?php }?>
             <?php }?>
             <div class="seperator"></div>
         </div>
