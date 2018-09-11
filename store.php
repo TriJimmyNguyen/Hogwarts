@@ -41,6 +41,64 @@ if(array_key_exists('books', $_GET)){
 
 define('CHECKED_ATTR', 'checked="checked"');
 
+require_once("function/loginout.php");
+
+if( ! array_key_exists('cart',$_SESSION)){
+    $_SESSION['cart'] = array();
+}
+
+$cart =& $_SESSION['cart'];
+
+if(array_key_exists('action', $_POST) && array_key_exists('wandName', $_POST)){
+
+    if(array_key_exists($_POST['wandName'], $cart)){
+        if($_POST['action'] == '+'){
+            $cart[$_POST['wandName']]++;
+        }
+        else if($_POST['action'] == '-' && $cart[$_POST['wandName']] > 0){
+            $cart[$_POST['wandName']]--;
+        }
+    }
+    else if($_POST['action'] == '+'){
+
+        $cart[$_POST['wandName']] = 1;
+    }
+}
+
+if(array_key_exists('action', $_POST) && array_key_exists('broomName', $_POST)){
+
+    if(array_key_exists($_POST['broomName'], $cart)){
+        if($_POST['action'] == '+'){
+            $cart[$_POST['broomName']]++;
+        }
+        else if($_POST['action'] == '-' && $cart[$_POST['broomName']] > 0){
+            $cart[$_POST['broomName']]--;
+        }
+    }
+    else if($_POST['action'] == '+'){
+
+        $cart[$_POST['broomName']] = 1;
+    }
+}
+
+if(array_key_exists('action', $_POST) && array_key_exists('bookName', $_POST)){
+
+    if(array_key_exists($_POST['bookName'], $cart)){
+        if($_POST['action'] == '+'){
+            $cart[$_POST['bookName']]++;
+        }
+        else if($_POST['action'] == '-' && $cart[$_POST['bookName']] > 0){
+            $cart[$_POST['bookName']]--;
+        }
+    }
+    else if($_POST['action'] == '+'){
+
+        $cart[$_POST['bookName']] = 1;
+    }
+}
+
+var_dump($_POST);
+var_dump($_SESSION);
 
 ?>
 
@@ -63,8 +121,8 @@ define('CHECKED_ATTR', 'checked="checked"');
                     if(array_key_exists('brooms', $_COOKIE) && $_COOKIE['brooms'] == 'view_yes'){
                         echo CHECKED_ATTR;
                    }
-                ?>/
-            >brooms<br>
+                ?>
+            />brooms<br>
 
             <input type="checkbox" name="books" value="books"
                 <?php
@@ -89,6 +147,19 @@ define('CHECKED_ATTR', 'checked="checked"');
                     <p>Description: <?= $details['description']?></p>
                     <p>Price: <?= $details['price']?><img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>
                     <img src="<?=$details['imagePath']?>" alt="<?=$details['name']?>" class="productPicture"/>
+                    <?php if(user_is_logged()){?>
+                        <form method="post">
+                            <input type="hidden" name="wandName" value="<?= $details['name']?>" />
+                            <span class="btn-group">
+                                <button type="submit"  name="action" value="+">
+                                    +
+                                </button>
+                                <button type="submit"  name="action" value="-">
+                                   -
+                                </button>
+                            </span>
+                        </form>
+                    <?php }?>
                 <?php }?>
             <?php }?>
         </div>
@@ -105,6 +176,19 @@ define('CHECKED_ATTR', 'checked="checked"');
                     <p>Description: <?= $details['description']?></p>
                     <p>Price: <?= $details['price']?><img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>
                     <img src="<?=$details['imagePath']?>" alt="<?=$details['name']?>"  class="productPicture"/>
+
+                    <form method="post">
+                        <input type="hidden" name="broomName" value="<?= $details['name']?>" />
+                        <span class="btn-group">
+                            <button type="submit"  name="action" value="+">
+                                +
+                            </button>
+                            <button type="submit"  name="action" value="-">
+                               -
+                            </button>
+                        </span>
+                    </form>
+
                 <?php }?>
             <?php }?>
             <div class="seperator"></div>
@@ -122,6 +206,19 @@ define('CHECKED_ATTR', 'checked="checked"');
                     <p>Description: <?= $details['description']?></p>
                     <p>Price: <?= $details['price']?><img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>
                     <img src="<?= $details['imagePath']?>" alt="<?= $details['name']?>"  class="productPicture"/>
+
+                    <form method="post">
+                        <input type="hidden" name="bookName" value="<?= $details['name']?>" />
+                        <span class="btn-group">
+                            <button type="submit"  name="action" value="+">
+                                +
+                            </button>
+                            <button type="submit"  name="action" value="-">
+                               -
+                            </button>
+                        </span>
+                    </form>
+
                 <?php }?>
             <?php }?>
             <div class="seperator"></div>

@@ -265,22 +265,22 @@ main#store div.seperator{
 
 main#store div#wands img[src="images/gold_coin.jpg"]{
     display:inline-block;
-    width:2vw;
-    height:2vh;
+    width:1.5vw;
+    height:1.5vw;
 
 }
 
 main#store div#brooms img[src="images/gold_coin.jpg"]{
     display:inline-block;
-    width:2vw;
-    height:2vh;
+    width:1.5vw;
+    height:1.5vw;
 
 }
 
 main#store div#books img[src="images/gold_coin.jpg"]{
     display:inline-block;
-    width:2vw;
-    height:2vh;
+    width:1.5vw;
+    height:1.5vw;
 }
 
 
