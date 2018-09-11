@@ -12,6 +12,8 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section 
 /*** Pour tous les pages ***/
 div.wrapper{
     padding-left:2vw;
+    background-color:#2d4257;
+
 }
 
 div.wrapper h2{
@@ -19,7 +21,7 @@ div.wrapper h2{
     position:relative;
     left:-1vw;
     font-size:2.75rem;
-    color: #2d4257;
+    color: #fabc01;
 }
 
 div.wrapper h3{
@@ -27,7 +29,7 @@ div.wrapper h3{
     position:relative;
     left:-0.5vw;
     font-size:2rem;
-    color: #385169;
+    color: #fabc01;
 }
 
 div.wrapper h4{
@@ -40,7 +42,7 @@ div.wrapper h4{
 
 div.wrapper p{
     font-family: 'Marck Script', cursive;
-
+    color:#fabc01
 }
 
 /**********************************************************************************************************************/
@@ -261,9 +263,6 @@ main#store img.productPicture{
 main#store div#wands img{
     width:22vw;
     height:35vh;
-    position:absolute;
-    top:45%;
-    left:0;
 }
 
 main#store div#brooms img{
@@ -280,6 +279,12 @@ main#store div#books img{
 main#store div.seperator{
     border-bottom:0.30vw solid #173980;
     padding-bottom:4%;
+    margin-bottom:1vh;
+    margin-top:1vh;
+    margin-right:auto;
+    margin-left:auto;
+    width:50vw;
+
 }
 
 main#store div#wands img[src="images/gold_coin.jpg"]{
@@ -312,6 +317,12 @@ main#store div#wands div.wandProduct{
     vertical-align:top;
     height:75vh;
     position:relative;
+    background-color:white;
+
+}
+
+main#store div#wands div.wandProduct p{
+    color:black;
 
 }
 
@@ -322,6 +333,15 @@ main#store div#brooms div.broomProduct{
     margin:2vw;
     border:0.25vw solid #fabc01;
     padding:0.5vw;
+    background-color:white;
+    vertical-align:top;
+
+
+}
+
+main#store div#brooms div.broomProduct p{
+    color:black;
+
 }
 
 
@@ -331,7 +351,70 @@ main#store div#books div.bookProduct{
     margin:2vw;
     border:0.25vw solid #fabc01;
     padding:0.5vw;
+    background-color:white;
+    vertical-align:top;
+
 }
 
+main#store div#books div.bookProduct p{
+    color:black;
+
+}
+
+main#store div#wands form[method="post"]{
+    display:inline-block;
+    width:3.75vw;
+    position:absolute;
+    bottom:5%;
+    right:5%;
+
+}
+
+main#store div#brooms  form[method="post"]{
+    display:inline-block;
+    width:3.75vw;
+    position:relative;
+    left:85%;
+
+}
+
+main#store div#books  form[method="post"]{
+    display:inline-block;
+    width:3.75vw;
+    position:relative;
+    right:-15%;
+}
+
+
+main#store button{
+    border:0.15vw solid #1d4ba7;
+    background-color:#173980;
+    color:#fabc01;
+    font-size:1rem;
+}
+
+
+main#store div#search{
+    position:relative;
+    left:2.5%;
+    border:0.15vw solid #163a82;
+    background-color: #0e214b;
+    color:#fabc01;
+    width:20vw;
+    padding:1vw;
+}
+
+main#store div#search input[name="submitSearch"]{
+    border:0.15vw solid #163a82;
+    background-color: #163a82;
+    color:#fabc01;
+    position:relative;
+    left:40%;
+}
+
+main#store p#searchTitle{
+    font-size:1.5rem;
+
+}
 
 /**********************************************************************************************************************/

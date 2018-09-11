@@ -105,8 +105,8 @@ var_dump($_SESSION);
 <main id="store">
     <h2><?= $pageName?></h2>
     <h3>Search</h3>
-    <p>Select what kind of items you wish to view</p>
     <div id="search">
+        <p id="searchTitle">Select what kind of items you wish to view</p>
         <form method="get" action="<?= $_SERVER['PHP_SELF']?>">
             <p>
                 <input type="checkbox" name="wands" value="wands"
