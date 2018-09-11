@@ -1,34 +1,34 @@
 <?php
 
+require_once("constant.php");
 require_once("function/loginout.php");
 
 if(!user_is_logged()) {
     header('Location:index.php');
 }
 
-var_dump($_POST);
+
 
 if(array_key_exists('logout', $_POST)){
     unset($_SESSION[USERNAME]);
     header('Location:index.php');
 }
 
+$pageName = PRIVATE_PAGE_NAME;
+
+$top_view = TOP_VIEW_PATH;
+require("$top_view");
+
 ?>
 
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Page privée</title>
-</head>
-<body>
+<h2><?=$pageName?></h2>
 <header>
-    <h1>Bonjour <span class="username"></span>, vous êtes sur votre page privée.</h1>
+    <h3>Hi <span class="username"><?=$_SESSION[USERNAME]?></span>, You are on your private page.</h3>
     <?php require_once('views/loginout_form.php')?>
 </header>
-<main>
 
-</main>
-</body>
-</html>
+<?php
 
+$bottom_view = BOTTOM_VIEW_PATH;
+require("$bottom_view");
+?>

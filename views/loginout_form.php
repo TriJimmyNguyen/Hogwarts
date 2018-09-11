@@ -4,6 +4,7 @@
 -->
 <div id="loginout">
     <?php if (user_is_logged()) { ?>
+        <a href="private_page.php">Private Page</a>
         <form method="post" id="logoutform">
             <input type="submit" name="logout" value="Déconnexion"/>
         </form>

@@ -98,7 +98,7 @@ if(array_key_exists('location', $_POST))
             <div>
                 <label for="email">Email: </label>
                 <input type="text" id ="email" name="email" value ="<?php
-                if($validation['email']['is_valid']){
+                if($validation['email']['is_valid'] || $validation['email']['value'] == ''){
                     echo $validation['email']['value'];
                 }
                 else{
@@ -109,7 +109,7 @@ if(array_key_exists('location', $_POST))
             <div>
                 <label for="postalCode">Postal code: </label>
                 <input type="text" id="postalCode" name="postalCode" value="<?php
-                if($validation['postalCode']['is_valid']){
+                if($validation['postalCode']['is_valid'] || $validation['postalCode']['value'] == ''){
                     echo $validation['postalCode']['value'] ;
                 }
                 else{
@@ -119,7 +119,7 @@ if(array_key_exists('location', $_POST))
             <div>
                 <label for="address">Address: </label>
                 <input type="text" id="address" name="address" value="<?php
-                if($validation['address']['is_valid']){
+                if($validation['address']['is_valid'] || $validation['address']['value'] == ''){
                     echo $validation['address']['value'];
                 }
                 else{
@@ -135,10 +135,10 @@ if(array_key_exists('location', $_POST))
             </div>
             <div>
 
-                    <label for="location">Choisis ta planete: </label>
+                    <label for="location">Choose your country: </label>
                     <select name="location[]" id="location">
                         <?php foreach($countries as $key) { ?>
-                            <option value="<?= $key?>" <?= in_array($key, $location)? SELECTED_ATTR : '' ?>><?= $key?></option>
+                            <option value="<?= $key?>" <?php if($location != '-1'){echo (in_array($key, $location)? SELECTED_ATTR : " ");} ?>><?= $key?></option>
                         <?php }?>
                     </select>
 

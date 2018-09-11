@@ -237,10 +237,11 @@ main#gallerie h3{
 /**********************************************************************************************************************/
 /*** Pour le store ***/
 
-main#store img{
+main#store img.productPicture{
     position:relative;
-    left:37vw;
+    left:30vw;
 }
+
 
 main#store div#wands img{
     width:25vw;
@@ -253,7 +254,7 @@ main#store div#brooms img{
 }
 
 main#store div#books img{
-    width:20vw;
+    width:17vw;
     height:35vh;
 }
 
@@ -261,5 +262,26 @@ main#store div.seperator{
     border-bottom:2px solid #173980;
     padding-bottom:4%;
 }
+
+main#store div#wands img[src="images/gold_coin.jpg"]{
+    display:inline-block;
+    width:2vw;
+    height:2vh;
+
+}
+
+main#store div#brooms img[src="images/gold_coin.jpg"]{
+    display:inline-block;
+    width:2vw;
+    height:2vh;
+
+}
+
+main#store div#books img[src="images/gold_coin.jpg"]{
+    display:inline-block;
+    width:2vw;
+    height:2vh;
+}
+
 
 /**********************************************************************************************************************/
