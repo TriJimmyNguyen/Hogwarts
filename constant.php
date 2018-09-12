@@ -16,8 +16,8 @@ define('ACCOUNT_PATH',"account.php");
 define('STORE_PATH',"store.php");
 define('PRIVATE_PATH', "private_page.php");
 
-define('TOP_VIEW_PATH','views\top_view.php');
-define('BOTTOM_VIEW_PATH','views\bottom_view.php');
+define('TOP_VIEW_PATH','views/top_view.php');
+define('BOTTOM_VIEW_PATH','views/bottom_view.php');
 
 define('LIMIT_WORDS_DESCRIPTION', 40);
 define('LIMIT_CHAR_DESCRIPTION', 300);

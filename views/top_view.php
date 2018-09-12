@@ -21,7 +21,7 @@ require_once("constant.php");
                 <img src="images/HogwartsCastle_banner.jpg" alt="hogwarts_castle_banner"/>
                 <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
                 <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
-                <?php require("views\menu.php"); ?>
+                <?php require("views/menu.php"); ?>
             </div>
         </header>
 

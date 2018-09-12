@@ -6,7 +6,7 @@ require_once("constant.php");
 $top_view = TOP_VIEW_PATH;
 
 $pageName = INDEX_PAGE_NAME;
-require("$top_view");
+require_once($top_view);
 
 ?>
 
@@ -44,6 +44,7 @@ require("$top_view");
         <p>It was hard to believe there was a ceiling there at all, and that the Great Hall didn’t simply open on to the heavens.</p>
     </div>
 </main>
+
 
 
 <?php

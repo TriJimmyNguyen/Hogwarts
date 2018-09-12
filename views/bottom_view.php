@@ -8,7 +8,7 @@
 ?>
 
             <footer>
-                <?php require("views\menu.php");?>
+                <?php require("views/menu.php");?>
             </footer>
         </div> <!--Wrapper-->
     </body>
