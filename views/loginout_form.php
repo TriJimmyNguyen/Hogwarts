@@ -25,7 +25,7 @@
                 <label for="password">Password: </label>
                 <input type="password" name="password" id="password" />
             </p>
-            <input type="submit" name="login" value="Connexion"/>
+            <input type="submit" name="login" value="Connect"/>
         </form>
     <?php } ?>
 </div>
