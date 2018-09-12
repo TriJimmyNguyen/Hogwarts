@@ -12,7 +12,7 @@ if(array_key_exists('logout', $_POST)){
 
 $top_view = TOP_VIEW_PATH;
 
-$pageName = LOGIN_PAGE_NAME;
+$pageName = ACCOUNT_PAGE_NAME;
 require("$top_view");
 
 var_dump($_SESSION);

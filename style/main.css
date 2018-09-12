@@ -427,16 +427,29 @@ main#contact form {
     background-color: #0e214b;
     color:#fabc01;
     width:25vw;
-
-}
-
-main#store form div {
     position:relative;
+    left:10%;
+    margin-bottom:7vh;
+
 }
 
-main#contact form input {
+main#contact form div {
+    position:relative;
+    padding: 1vh 2vh;
+    padding-bottom:1vh;
+    padding-top:1vh;
+}
+
+main#contact form input[type="text"]{
     position:absolute;
-    left:0;
+    left:30%;
+}
+
+main#contact iframe{
+    margin-bottom:7vh;
+    position:relative;
+    left:10%;
+
 }
 
 

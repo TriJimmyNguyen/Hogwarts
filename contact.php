@@ -93,6 +93,7 @@ if(array_key_exists('location', $_POST))
 
 <h2><?= $pageName?></h2>
 <main id="contact">
+    <h3>Subscription For News</h3>
     <form method="post" action="<?= $_SERVER['PHP_SELF']?>">
         <form id="formulaire_inscription" method="post">
             <div>
@@ -148,6 +149,7 @@ if(array_key_exists('location', $_POST))
             </div>
         </form>
     </form>
+    <h3>Come Meet Us</h3>
     <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d79147.32815290352!2d-0.48693288919867683!3d51.689966615767304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x4876402f2fe350ad%3A0x6944cdcc4c412ec8!2sWarner+Bros.+Studio+Tour+London%2C+Studio+Tour+Drive%2C+Watford%2C+Leavesden+WD25+7LR%2C+UK!3m2!1d51.6904131!2d-0.41758!5e0!3m2!1sfr!2sca!4v1536589957184" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 </main>
 <?php
