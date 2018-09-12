@@ -35,8 +35,35 @@ require("$top_view");
         <?php foreach($_SESSION['cart'] as $key => $value){?>
             <p><?= $value . " " . $key?></p>
         <?php }?>
-
     <?php }?>
+    <?php
+        if(array_key_exists('cart', $_SESSION)) {
+            $totalPriceCart = 0;
+            foreach($_SESSION['cart'] as $key => $value){
+                foreach($wands as $wandName => $details) {
+                    if ($wandName != 'description' &&$key == $details['name']) {
+                        $totalPriceCart += $details['price'];
+                    }
+                }
+                foreach($brooms as $broomName => $details){
+                    if($broomName != 'description' && $key == $details['name']){
+                        $totalPriceCart += $details['price'];
+                    }
+                }
+                foreach($books as $bookName => $details){
+                    if($bookName != 'description' && $key == $details['name']){
+                        $totalPriceCart += $details['price'];
+                    }
+                }
+            }
+
+            if ($totalPriceCart > 0) {
+                echo "<p>Total Price: " . $totalPriceCart . " Gold Coins</p>";
+            }
+
+        }
+
+    ?>
     <h4>Stuff you have to buy</h4>
     <?php
 
