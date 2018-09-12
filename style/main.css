@@ -12,7 +12,15 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section 
 /*** Pour tous les pages ***/
 div.wrapper{
     padding-left:2vw;
-    background-color:#2d4257;
+    padding-right:2vw;
+    /*background-color:#2d4257;*/
+    background: -moz-linear-gradient(92deg, rgba(45,66,87,1) 0%, rgba(69,99,128,1) 99%, rgba(69,99,128,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(69,99,128,1)), color-stop(1%, rgba(69,99,128,1)), color-stop(100%, rgba(45,66,87,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(92deg, rgba(45,66,87,1) 0%, rgba(69,99,128,1) 99%, rgba(69,99,128,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(92deg, rgba(45,66,87,1) 0%, rgba(69,99,128,1) 99%, rgba(69,99,128,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(92deg, rgba(45,66,87,1) 0%, rgba(69,99,128,1) 99%, rgba(69,99,128,1) 100%); /* ie10+ */
+    background: linear-gradient(358deg, rgba(45,66,87,1) 0%, rgba(69,99,128,1) 99%, rgba(69,99,128,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#456380', endColorstr='#2d4257',GradientType=0 ); /* ie6-9 */
 
 }
 
@@ -79,7 +87,7 @@ header li {
     /*font-family: 'Lato', sans-serif;*/
     font-family: 'Marck Script', cursive;
 
-
+    /*source: http://angrytools.com/gradient*?
     background: -moz-linear-gradient(284deg, rgba(81,42,14,1) 0%, rgba(69,99,128,1) 100%); /* ff3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(81,42,14,1)), color-stop(100%, rgba(69,99,128,1))); /* safari4+,chrome */
     background: -webkit-linear-gradient(284deg, rgba(81,42,14,1) 0%, rgba(69,99,128,1) 100%); /* safari5.1+,chrome10+ */
