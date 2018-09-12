@@ -39,78 +39,73 @@ require("$top_view");
     <?php }?>
     <h4>Stuff you have to buy</h4>
     <?php
-        $wandPresentOrNot = false;
-        foreach($wands as $wandName => $details) {
-            if($wandName != 'description'){
-                foreach ($_SESSION['cart'] as $key => $value) {
+        if(array_key_exists('cart', $_SESSION)){
+            $wandPresentOrNot = false;
+            foreach($wands as $wandName => $details) {
+                if($wandName != 'description'){
+                    foreach ($_SESSION['cart'] as $key => $value) {
                         if($details['name'] == $key && $value > 0){
                             $wandPresentOrNot = true;
                         }
 
+                    }
                 }
             }
+
+            if(!$wandPresentOrNot){
+                echo"<p>Wand </p>";
+            }
+
+            $allBookPresent = true;
+
+            $coursesList = ($users[$_SESSION[USERNAME]]['courses']);
+            $numberOfCourses = count($coursesList);
+
+
+
+            $testArray = array();
+            for($i = 0; $i < $numberOfCourses; $i++) {
+
+                if(!array_key_exists('Book for ' . $coursesList[$i], $_SESSION['cart'])){
+                    echo "<p>" . 'Book for ' . $coursesList[$i] . "</p>";
+                    $allBookPresent = false;
+                }
+            }
+
+            $FlyingCoursePresentOrNot = false;
+
+            for($i = 0; $i < $numberOfCourses; $i++){
+                if($coursesList[$i] ==  'Flying'){
+                    $FlyingCoursePresentOrNot = true;
+                }
+            }
+
+            $broomPresentOrNot = false;
+
+            $arraySession = array_keys($_SESSION['cart']);
+            $arraySize = count($arraySession);
+
+            if($FlyingCoursePresentOrNot){
+                for($i = 0; $i < $arraySize; $i++){
+                    if(strpos($arraySession[$i], 'Broom') === 0){
+                        $broomPresentOrNot = true;
+                    }
+                }
+            }
+
+            if($FlyingCoursePresentOrNot && !$broomPresentOrNot){
+                echo "<p>Broom </p>";
+            }
+        }
+        else{
+            echo "<p>Cart is empty</P>";
         }
 
 
     ?>
-    <?php
-        if(!$wandPresentOrNot){
-            echo"<p> a wand </p>";
-        }
-//    foreach($users[$_SESSION[USERNAME]]['courses'] as $courses){
-//        foreach ($_SESSION['cart'] as $key => $value){
-//             foreach($books as $bookName => $details){
-//                 if($bookName != 'description'){
-//                     if($key != $details['name'] && $courses == $details['course']){
-//                         echo "<p>" . $details['name'] . "</p>";
-//                     }
-//                 }
-//             }
-//        }
-//    }
-
-    foreach($users[$_SESSION[USERNAME]]['courses'] as $courses) {
-        $bookName = "";
-        foreach ($books as $bookName => $details) {
-            if ($bookName != 'description') {
-                if ($details['course'] == $courses) {
-                    $bookName = $details['name'];
-                }
-                else{
-                    $bookName = "";
-                }
-                echo "book course";
-                var_dump($details['course']);
-                echo "courseName";
-                var_dump($courses);
-                echo "bookName";
-                var_dump($bookName);
-            }
 
 
-        }
 
-//        var_dump($courses);
-//        var_dump($bookName);
-
-//        $bookPresentOrNot = false;
-//        foreach ($_SESSION['cart'] as $key => $value) {
-//            if ($key == $bookName) {
-//                $bookPresentOrNot = true;
-//            }
-//            echo"Key value";
-//            var_dump($key);
-//            echo"bookName";
-//            var_dump($bookName);
-//            echo"value of bookPresentOrNot";
-//            var_dump($bookPresentOrNot);
-//        }
-//
-//        if (!$bookPresentOrNot) {
-//            echo "<p> $bookName </p>";
-//        }
-    }
-    ?>
 </main>
 
 <?php

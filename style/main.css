@@ -316,7 +316,7 @@ main#store div#wands div.wandProduct{
     border:0.25vw solid #fabc01;
     padding:0.5vw;
     vertical-align:top;
-    height:75vh;
+    /*height:75vh;*/
     position:relative;
     background-color:white;
 
@@ -403,6 +403,7 @@ main#store div#search{
     color:#fabc01;
     width:20vw;
     padding:1vw;
+    margin:1vw;
 }
 
 main#store div#search input[name="submitSearch"]{

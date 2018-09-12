@@ -37,7 +37,6 @@ $users = array(
             'Charms',
             'Dark Arts',
             'Defence Against Dark Arts',
-            'Flying',
             'Herbology',
             'Muggle Studies',
             'Potions',

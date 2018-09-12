@@ -47,6 +47,7 @@ if( ! array_key_exists('cart',$_SESSION)){
     $_SESSION['cart'] = array();
 }
 
+
 $cart =& $_SESSION['cart'];
 
 if(array_key_exists('action', $_POST) && array_key_exists('wandName', $_POST)){
@@ -54,6 +55,7 @@ if(array_key_exists('action', $_POST) && array_key_exists('wandName', $_POST)){
     if(array_key_exists($_POST['wandName'], $cart)){
         if($_POST['action'] == '+'){
             $cart[$_POST['wandName']]++;
+
         }
         else if($_POST['action'] == '-' && $cart[$_POST['wandName']] > 0){
             $cart[$_POST['wandName']]--;
@@ -97,8 +99,12 @@ if(array_key_exists('action', $_POST) && array_key_exists('bookName', $_POST)){
     }
 }
 
-var_dump($_POST);
-var_dump($_SESSION);
+foreach($_SESSION['cart'] as $key => $value){
+    if($value == 0){
+        unset($_SESSION['cart'][$key]);
+    }
+}
+
 
 ?>
 
