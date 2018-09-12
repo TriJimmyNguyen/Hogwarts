@@ -7,6 +7,7 @@ require_once('function/loginout.php');
 if(array_key_exists('logout', $_POST)){
     unset($_SESSION[USERNAME]);
     unset($_SESSION[PASSWORD]);
+    unset($_SESSION['cart']);
 }
 
 

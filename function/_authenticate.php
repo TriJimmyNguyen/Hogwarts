@@ -11,13 +11,12 @@
  * @param $password
  * @return bool
  */
+
+require_once("database/users.php");
+
 function authenticate($username, $password) {
-    $users = array(
-        'brice' => '202cb962ac59075b964b07152d234b70', // 123
-        'hatem' => '250cf8b51c773f3f8dc8b4be867a9a02', // 456
-        'tania' => '68053af2923e00204c3ca7c6a3150cf7', // 789
-    );
-    $result = array_key_exists($username, $users) && (md5($password) === $users[$username]);
+    global $users;
+    $result = array_key_exists($username, $users) && (md5($password) === $users[$username]['password']);
     //var_dump(md5($password),$result);
     return $result;
 }
