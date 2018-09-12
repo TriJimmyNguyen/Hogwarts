@@ -24,7 +24,6 @@ require("$top_view");
 <h2><?=$pageName?></h2>
 <header>
     <h3>Hi <span class="username"><?=$_SESSION[USERNAME]?></span>, You are on your private page.</h3>
-    <?php require_once('views/loginout_form.php')?>
 </header>
 
 <?php

@@ -19,7 +19,7 @@ var_dump($_SESSION);
 ?>
 
 <h2><?=$pageName?></h2>
-<main id="login">
+<main id="account">
     <?php require_once('views/loginout_form.php'); ?>
 </main>
 <?php

@@ -411,6 +411,8 @@ main#store div#search input[name="submitSearch"]{
     color:#fabc01;
     position:relative;
     left:40%;
+    font-family: 'Marck Script', cursive;
+    font-size:1.5rem;
 }
 
 main#store p#searchTitle{
@@ -436,13 +438,21 @@ main#contact form {
 main#contact form div {
     position:relative;
     padding: 1vh 2vh;
-    padding-bottom:1vh;
-    padding-top:1vh;
 }
 
 main#contact form input[type="text"]{
     position:absolute;
     left:30%;
+}
+
+main#contact input[type="submit"]{
+    border:0.15vw solid #163a82;
+    background-color: #163a82;
+    color:#fabc01;
+    position:relative;
+    left:40%;
+    font-family: 'Marck Script', cursive;
+    font-size:1.5rem;
 }
 
 main#contact iframe{
@@ -452,5 +462,88 @@ main#contact iframe{
 
 }
 
+/**********************************************************************************************************************/
 
 /**********************************************************************************************************************/
+/*** Pour la page account ***/
+
+main#account form#loginform{
+    border:0.15vw solid #163a82;
+    background-color: #0e214b;
+    color:#fabc01;
+    width:25vw;
+    position:relative;
+    left:10%;
+    margin-bottom:7vh;
+    padding: 1vh 2vh;
+
+}
+
+main#account form#loginform input[type="submit"]{
+    border:0.15vw solid #163a82;
+    background-color: #163a82;
+    color:#fabc01;
+    position:relative;
+    left:40%;
+    font-family: 'Marck Script', cursive;
+    font-size:1.5rem;
+
+}
+
+main#account form input[type="text"]{
+     position:absolute;
+     left:30%;
+}
+
+main#account form input[type="password"]{
+    position:absolute;
+    left:30%;
+}
+
+main#account input[name="logout"]{
+    border:0.15vw solid #163a82;
+    background-color: #163a82;
+    color:#fabc01;
+    position:relative;
+    font-size: 1.5rem;
+    font-family: 'Marck Script', cursive;
+    left:5%;
+    padding: 1vh 2vw;
+
+
+}
+
+main#account div#signout{
+    margin-bottom:7vh;
+}
+
+main#account div#signin a {
+    line-height:8vh;
+    text-decoration:none;
+    font-size:1.5rem;
+    font-family: 'Marck Script', cursive;
+    background-color: #163a82;
+    padding: 1vh 2vw;
+    position:relative;
+    left:5%;
+
+}
+
+
+/*Style pour lien*/
+main#account div#signin  a:link {
+    color:#fabc01;
+}
+
+/*Style pour lien*/
+main#account div#signin  a:visited {
+    color:#fabc01;
+}
+
+/*Style pour lien*/
+main#account div#signin  a:hover {
+    color:white;
+}
+
+/**********************************************************************************************************************/
+
