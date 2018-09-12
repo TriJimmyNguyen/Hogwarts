@@ -197,11 +197,17 @@ var_dump($_SESSION);
                         <h4><?= $details['name']?></h4>
                         <p>Description:
                             <?php
-                            if(strlen($details['description']) < 300) {
+
+                            if(str_word_count($details['description']) < LIMIT_WORDS_DESCRIPTION) {
                                 echo $details['description'];
                             }
                             else{
-                                echo substr($details['description'], 0, 300) . "...";
+                                $subarray = str_word_count($details['description'], 1);
+
+                                for($i = 0; $i < LIMIT_WORDS_DESCRIPTION; $i++){
+                                    echo $subarray["$i"] . " ";
+
+                                }
                             }
                             ?>
                         </p>
@@ -238,12 +244,18 @@ var_dump($_SESSION);
                         <p>Course: <?= $details['course']?></p>
                         <p>Description:
                             <?php
-                                if(strlen($details['description']) < 300) {
-                                    echo $details['description'];
+
+                            if(str_word_count($details['description']) < LIMIT_WORDS_DESCRIPTION) {
+                                echo $details['description'];
+                            }
+                            else{
+                                $subarray = str_word_count($details['description'], 1);
+
+                                for($i = 0; $i < LIMIT_WORDS_DESCRIPTION; $i++){
+                                    echo $subarray["$i"] . " ";
+
                                 }
-                                else{
-                                    echo substr($details['description'], 0, 300) . "...";
-                                }
+                            }
                             ?>
                         </p>
                         <p>Price: <?= $details['price']?><img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>
