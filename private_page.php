@@ -39,66 +39,85 @@ require("$top_view");
     <?php }?>
     <h4>Stuff you have to buy</h4>
     <?php
-        if(array_key_exists('cart', $_SESSION)){
-            $wandPresentOrNot = false;
-            foreach($wands as $wandName => $details) {
-                if($wandName != 'description'){
+
+        $wandPresentOrNot = false;
+        if(array_key_exists('cart', $_SESSION)) {
+            foreach ($wands as $wandName => $details) {
+                if ($wandName != 'description') {
                     foreach ($_SESSION['cart'] as $key => $value) {
-                        if($details['name'] == $key && $value > 0){
+                        if ($details['name'] == $key && $value > 0) {
                             $wandPresentOrNot = true;
                         }
 
                     }
                 }
             }
-
+        }
+        else{
             if(!$wandPresentOrNot){
                 echo"<p>Wand </p>";
             }
-
-            $allBookPresent = true;
-
-            $coursesList = ($users[$_SESSION[USERNAME]]['courses']);
-            $numberOfCourses = count($coursesList);
+        }
 
 
 
-            $testArray = array();
-            for($i = 0; $i < $numberOfCourses; $i++) {
+        $allBookPresent = true;
 
-                if(!array_key_exists('Book for ' . $coursesList[$i], $_SESSION['cart'])){
+        $coursesList = ($users[$_SESSION[USERNAME]]['courses']);
+        $numberOfCourses = count($coursesList);
+
+        if(array_key_exists('cart', $_SESSION)) {
+
+            for ($i = 0; $i < $numberOfCourses; $i++) {
+
+                if (!array_key_exists('Book for ' . $coursesList[$i], $_SESSION['cart'])) {
                     echo "<p>" . 'Book for ' . $coursesList[$i] . "</p>";
                     $allBookPresent = false;
                 }
             }
-
-            $FlyingCoursePresentOrNot = false;
-
-            for($i = 0; $i < $numberOfCourses; $i++){
-                if($coursesList[$i] ==  'Flying'){
-                    $FlyingCoursePresentOrNot = true;
-                }
+        }
+        else{
+            for ($i = 0; $i < $numberOfCourses; $i++){
+                echo "<p>" . 'Book for ' . $coursesList[$i] . "</p>";
             }
+        }
 
-            $broomPresentOrNot = false;
+        $FlyingCoursePresentOrNot = false;
+
+        for($i = 0; $i < $numberOfCourses; $i++){
+            if($coursesList[$i] ==  'Flying'){
+                $FlyingCoursePresentOrNot = true;
+            }
+        }
+
+        $broomPresentOrNot = false;
+
+        if(array_key_exists('cart', $_SESSION)) {
 
             $arraySession = array_keys($_SESSION['cart']);
             $arraySize = count($arraySession);
 
-            if($FlyingCoursePresentOrNot){
-                for($i = 0; $i < $arraySize; $i++){
-                    if(strpos($arraySession[$i], 'Broom') === 0){
+            if ($FlyingCoursePresentOrNot) {
+                for ($i = 0; $i < $arraySize; $i++) {
+                    if (strpos($arraySession[$i], 'Broom') === 0) {
                         $broomPresentOrNot = true;
                     }
                 }
             }
 
-            if($FlyingCoursePresentOrNot && !$broomPresentOrNot){
+            if ($FlyingCoursePresentOrNot && !$broomPresentOrNot) {
                 echo "<p>Broom </p>";
             }
         }
-        else{
-            echo "<p>Cart is empty</P>";
+        else {
+            echo "<p>Broom </p>";
+
+        }
+
+        if(array_key_exists('cart', $_SESSION)) {
+            if ($wandPresentOrNot && $allBookPresent && (!$FlyingCoursePresentOrNot || $broomPresentOrNot)) {
+                echo "<p>Success you bought everything you need</p>";
+            }
         }
 
 
