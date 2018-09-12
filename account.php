@@ -16,7 +16,7 @@ $top_view = TOP_VIEW_PATH;
 $pageName = ACCOUNT_PAGE_NAME;
 require("$top_view");
 
-var_dump($_SESSION);
+
 ?>
 
 <h2><?=$pageName?></h2>
