@@ -11,7 +11,7 @@ require_once("constant.php");
         <meta charset="UTF-8"/>
         <title><?=SITE_NAME?></title>
         <link rel="stylesheet" href="style/main.css"/>
-
+        <link rel="icon" href="images/logo/logo_transparent.png"/>
     </head>
     <body>
     <div class="wrapper">

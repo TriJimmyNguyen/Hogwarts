@@ -30,6 +30,14 @@ $validation = array(
         'is_valid' => false,
         'message' => 'more char needed',
     ),
+    'sexe' => array(
+            'value' => '',
+            'is_valid' => false,
+    ),
+    'location' => array(
+            'value' => '',
+            'is_valid' => false,
+    ),
 
 );
 
@@ -40,18 +48,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Valider champ par champ
     if (array_key_exists('email', $_POST)) {
         $validation['email']['value'] = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-        $validation['email']['is_valid'] = strlen($validation['email']['value']) >= 2;
+        $validation['email']['is_valid'] = strlen($validation['email']['value']) >= 2 &&  $validation['email']['value'] !=
+            $validation['email']['message'] ;
     }
 
     if (array_key_exists('postalCode', $_POST)) {
         $validation['postalCode']['value'] = filter_input(INPUT_POST, 'postalCode', FILTER_SANITIZE_STRING);
-        $validation['postalCode']['is_valid'] = strlen($validation['postalCode']['value']) >= 2;
+        $validation['postalCode']['is_valid'] = strlen($validation['postalCode']['value']) >= 2 &&  $validation['postalCode']['value'] !=
+            $validation['postalCode']['message'] ;
     }
 
     if (array_key_exists('address', $_POST)) {
         $validation['address']['value'] = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
-        $validation['address']['is_valid'] = strlen($validation['address']['value']) >= 2;
+        $validation['address']['is_valid'] = strlen($validation['address']['value']) >= 2&&  $validation['address']['value'] !=
+            $validation['address']['message'] ;
     }
+
 
     if ($validation['email']['is_valid'] && $validation['postalCode']['is_valid']
         && $validation['address']['is_valid']) {
@@ -62,13 +74,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 define('CHECKED_ATTR', 'checked="checked"');
-$sexe ="";
+
 
 if(array_key_exists('gender', $_POST)){
-    $sexe = $_POST['gender'];
+    $validation['sexe']['value'] = $_POST['gender'];
+    $validation['sexe']['is_valid'] = true;
 }
 
 $countries = array(
+    'Choose',
     'Canada',
     'Denmark',
     'Egypt',
@@ -82,11 +96,17 @@ $countries = array(
 
 define('SELECTED_ATTR', 'selected="selected"');
 
-$location='-1';
+
 
 if(array_key_exists('location', $_POST))
 {
-    $location = $_POST['location'];
+
+    if($_POST['location'][0] != 'Choose' ){
+        $validation['location']['value'] = $_POST['location'][0];
+        $validation['location']['is_valid'] = true;
+    }
+
+
 }
 
 ?>
@@ -96,18 +116,23 @@ if(array_key_exists('location', $_POST))
     <h3>Subscription For News</h3>
     <form method="post" action="<?= $_SERVER['PHP_SELF']?>">
         <form id="formulaire_inscription" method="post">
-            <div>
+            <div <?php if(!$validation['email']['is_valid'] && $_SERVER['REQUEST_METHOD'] === 'POST' ){
+                echo "class=invalid";
+                    }?> >
                 <label for="email">Email: </label>
                 <input type="text" id ="email" name="email" value ="<?php
-                if($validation['email']['is_valid'] || $validation['email']['value'] == ''){
-                    echo $validation['email']['value'];
-                }
-                else{
-                    echo $validation['email']['message'];
-                }
-                ?>"/>
+                    if($validation['email']['is_valid'] || $validation['email']['value'] == ''){
+                        echo $validation['email']['value'];
+                    }
+                    else{
+                        echo $validation['email']['message'];
+                    }
+                    ?>"
+                />
             </div>
-            <div>
+            <div <?php if(!$validation['postalCode']['is_valid'] && $_SERVER['REQUEST_METHOD'] === 'POST' ){
+                echo "class=invalid";
+            }?> >
                 <label for="postalCode">Postal code: </label>
                 <input type="text" id="postalCode" name="postalCode" value="<?php
                 if($validation['postalCode']['is_valid'] || $validation['postalCode']['value'] == ''){
@@ -117,7 +142,9 @@ if(array_key_exists('location', $_POST))
                     echo $validation['postalCode']['message'];
                 }?>"/>
             </div>
-            <div>
+            <div <?php if(!$validation['address']['is_valid'] && $_SERVER['REQUEST_METHOD'] === 'POST' ){
+                echo "class=invalid";
+            }?> >
                 <label for="address">Address: </label>
                 <input type="text" id="address" name="address" value="<?php
                 if($validation['address']['is_valid'] || $validation['address']['value'] == ''){
@@ -127,19 +154,19 @@ if(array_key_exists('location', $_POST))
                     echo $validation['address']['message'];
                 }?>"/>
             </div>
-            <div>
-                <label for="gender">Gender:
-                    <input type="radio" name="gender" value="male" <?php if($sexe=='male'){echo CHECKED_ATTR;}?>/>Male
-                    <input type="radio" name="gender" value="female" <?php if($sexe=='female'){echo CHECKED_ATTR;}?>/>Female
-                    <input type="radio" name="gender" value="other" <?php if($sexe=='other'){echo CHECKED_ATTR;}?>/>Other
+            <div <?php if(!array_key_exists('gender', $_POST) && $_SERVER['REQUEST_METHOD'] === 'POST'){echo "class=invalid";}?>>
+                <label for="gender" >Gender:
+                    <input type="radio" name="gender" value="male" <?php if( $validation['sexe']['value']=='male'){echo CHECKED_ATTR;}?>/>Male
+                    <input type="radio" name="gender" value="female" <?php if( $validation['sexe']['value']=='female'){echo CHECKED_ATTR;}?>/>Female
+                    <input type="radio" name="gender" value="other" <?php if( $validation['sexe']['value']=='other'){echo CHECKED_ATTR;}?>/>Other
                 </label>
             </div>
-            <div>
+            <div <?php if(!$validation['location']['is_valid'] && $_SERVER['REQUEST_METHOD'] === 'POST'){echo "class=invalid";}?>>
 
                     <label for="location">Choose your country: </label>
                     <select name="location[]" id="location">
                         <?php foreach($countries as $key) { ?>
-                            <option value="<?= $key?>" <?php if($location != '-1'){echo (in_array($key, $location)? SELECTED_ATTR : " ");} ?>><?= $key?></option>
+                            <option value="<?= $key?>" <?php echo ($key == $validation['location']['value']? SELECTED_ATTR : " ");?>><?= $key?></option>
                         <?php }?>
                     </select>
 
