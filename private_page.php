@@ -42,17 +42,17 @@ require("$top_view");
             foreach($_SESSION['cart'] as $key => $value){
                 foreach($wands as $wandName => $details) {
                     if ($wandName != 'description' &&$key == $details['name']) {
-                        $totalPriceCart += $details['price'];
+                        $totalPriceCart += $details['price'] * $value;
                     }
                 }
                 foreach($brooms as $broomName => $details){
                     if($broomName != 'description' && $key == $details['name']){
-                        $totalPriceCart += $details['price'];
+                        $totalPriceCart += $details['price'] * $value;
                     }
                 }
                 foreach($books as $bookName => $details){
                     if($bookName != 'description' && $key == $details['name']){
-                        $totalPriceCart += $details['price'];
+                        $totalPriceCart += $details['price'] * $value;
                     }
                 }
             }
