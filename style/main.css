@@ -212,6 +212,29 @@ footer a:visited {
 footer a:hover {
     color:white;
 }
+
+footer p#bottomFlair{
+    font-size:3vw;
+    margin:0;
+    display:inline-block;
+    position:absolute;
+    top:22%;
+    left:48%;
+    z-index: 20;
+    background-color:#1b2432;
+    padding:0 1vw;
+}
+
+footer div#bottomFlairLine{
+    position:absolute;
+    width:90vw;
+    top:35%;
+    left:2.5%;
+    border-bottom:0.25vh solid #fabc01;
+    z-index: 10;
+
+}
+
 /**********************************************************************************************************************/
 
 /**********************************************************************************************************************/

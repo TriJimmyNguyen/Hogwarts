@@ -2,8 +2,6 @@
 
 require_once("constant.php");
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
