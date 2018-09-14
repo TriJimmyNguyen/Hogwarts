@@ -66,26 +66,24 @@ require("$top_view");
     ?>
     <h4>Stuff you have to buy</h4>
     <?php
-
+        var_dump($_SESSION['cart']);
         $wandPresentOrNot = false;
         if(array_key_exists('cart', $_SESSION)) {
             foreach ($wands as $wandName => $details) {
-                if ($wandName != 'description') {
-                    foreach ($_SESSION['cart'] as $key => $value) {
-                        if ($details['name'] == $key && $value > 0) {
+                if($wandName != 'description'){
+                    foreach($_SESSION['cart'] as $key => $value){
+                        if(strcmp($details['name'], $key) === 0){
                             $wandPresentOrNot = true;
                         }
-
                     }
                 }
             }
         }
-        else{
-            if(!$wandPresentOrNot == true){
-                echo"<p>Wand </p>";
-            }
+
+        if(!$wandPresentOrNot == true) {
+            echo "<p>Wand </p>";
         }
-        
+
         $allBookPresent = true;
 
         $coursesList = ($users[$_SESSION[USERNAME]]['courses']);
