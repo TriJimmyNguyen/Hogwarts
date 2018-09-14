@@ -85,7 +85,7 @@ validLocation($validation);
                  displayTextField('postalCode', $validation, POSTAL_CODE);
                  displayTextField('address', $validation, ADDRESS);
              ?>
-            
+
             <div <?php if(!array_key_exists('gender', $_POST) && $_SERVER['REQUEST_METHOD'] === 'POST'){echo "class=invalid";}?>>
                 <label for="gender" >Gender:
                     <input type="radio" name="gender" value="male" <?php if( $validation['sexe']['value']=='male'){echo CHECKED_ATTR;}?>/>Male

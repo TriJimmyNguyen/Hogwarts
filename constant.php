@@ -46,4 +46,5 @@ define('STRING_BROOM_POSITION', 0);
 //pour store.php
 define('ONE_DAY_IN_SEC', 24*60*60);
 define('ZERO_QUANTITY', 0);
+define('ONE_QUANTITY', 1);
 ?>
