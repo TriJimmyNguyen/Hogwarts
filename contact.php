@@ -46,18 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Valider champ par champ
     enterValidTextField($validation, 'email');
 
-    if (array_key_exists('postalCode', $_POST)) {
-        $validation['postalCode']['value'] = filter_input(INPUT_POST, 'postalCode', FILTER_SANITIZE_STRING);
-        $validation['postalCode']['is_valid'] = strlen($validation['postalCode']['value']) >= LONGUEUR_CHAMP && $validation['postalCode']['value'] !=
-            $validation['postalCode']['message'] ;
-    }
+    enterValidTextField($validation, 'postalCode');
 
-    if (array_key_exists('address', $_POST)) {
-        $validation['address']['value'] = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
-        $validation['address']['is_valid'] = strlen($validation['address']['value']) >= LONGUEUR_CHAMP && $validation['address']['value'] !=
-            $validation['address']['message'] ;
-    }
-
+    enterValidTextField($validation, 'address');
 
     if ($validation['email']['is_valid'] && $validation['postalCode']['is_valid']
         && $validation['address']['is_valid']) {
@@ -89,12 +80,10 @@ $countries = array(
 
 if(array_key_exists('location', $_POST))
 {
-
     if($_POST['location'][PREMIER_VALEUR] != 'Choose' ){
         $validation['location']['value'] = $_POST['location'][PREMIER_VALEUR];
         $validation['location']['is_valid'] = true;
     }
-
 
 }
 
