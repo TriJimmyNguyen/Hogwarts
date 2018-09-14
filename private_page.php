@@ -81,13 +81,11 @@ require("$top_view");
             }
         }
         else{
-            if(!$wandPresentOrNot){
+            if(!$wandPresentOrNot == true){
                 echo"<p>Wand </p>";
             }
         }
-
-
-
+        
         $allBookPresent = true;
 
         $coursesList = ($users[$_SESSION[USERNAME]]['courses']);
