@@ -39,30 +39,6 @@ $validation = array(
 
 );
 
-
-
-// Faire la validation champ par champ
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Valider champ par champ
-    enterValidTextField($validation, 'email');
-
-    enterValidTextField($validation, 'postalCode');
-
-    enterValidTextField($validation, 'address');
-
-    if ($validation['email']['is_valid'] && $validation['postalCode']['is_valid']
-        && $validation['address']['is_valid']) {
-        // Formulaire valide
-        // enregister DB puis redirection
-    }
-}
-
-
-if(array_key_exists('gender', $_POST)){
-    $validation['sexe']['value'] = $_POST['gender'];
-    $validation['sexe']['is_valid'] = true;
-}
-
 $countries = array(
     'Choose',
     'Canada',
@@ -77,15 +53,25 @@ $countries = array(
 );
 
 
+// Faire la validation champ par champ
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Valider champ par champ
+    enterValidTextField($validation, EMAIL);
 
-if(array_key_exists('location', $_POST))
-{
-    if($_POST['location'][PREMIER_VALEUR] != 'Choose' ){
-        $validation['location']['value'] = $_POST['location'][PREMIER_VALEUR];
-        $validation['location']['is_valid'] = true;
+    enterValidTextField($validation, POSTAL_CODE);
+
+    enterValidTextField($validation, ADDRESS);
+
+    if ($validation[EMAIL][IS_VALID] && $validation[POSTAL_CODE][IS_VALID]
+        && $validation[ADDRESS][IS_VALID]) {
+        // Formulaire valide
+        // enregister DB puis redirection
     }
-
 }
+
+validGender($validation);
+
+validLocation($validation);
 
 ?>
 
@@ -94,44 +80,12 @@ if(array_key_exists('location', $_POST))
     <h3>Subscription For News</h3>
     <form method="post" action="<?= $_SERVER['PHP_SELF']?>">
         <form id="formulaire_inscription" method="post">
-            <div <?php if(!$validation['email']['is_valid'] && $_SERVER['REQUEST_METHOD'] === 'POST' ){
-                echo "class=invalid";
-                    }?> >
-                <label for="email">Email: </label>
-                <input type="text" id ="email" name="email" value ="<?php
-                    if($validation['email']['is_valid'] || $validation['email']['value'] == ''){
-                        echo $validation['email']['value'];
-                    }
-                    else{
-                        echo $validation['email']['message'];
-                    }
-                    ?>"
-                />
-            </div>
-            <div <?php if(!$validation['postalCode']['is_valid'] && $_SERVER['REQUEST_METHOD'] === 'POST' ){
-                echo "class=invalid";
-            }?> >
-                <label for="postalCode">Postal code: </label>
-                <input type="text" id="postalCode" name="postalCode" value="<?php
-                if($validation['postalCode']['is_valid'] || $validation['postalCode']['value'] == ''){
-                    echo $validation['postalCode']['value'] ;
-                }
-                else{
-                    echo $validation['postalCode']['message'];
-                }?>"/>
-            </div>
-            <div <?php if(!$validation['address']['is_valid'] && $_SERVER['REQUEST_METHOD'] === 'POST' ){
-                echo "class=invalid";
-            }?> >
-                <label for="address">Address: </label>
-                <input type="text" id="address" name="address" value="<?php
-                if($validation['address']['is_valid'] || $validation['address']['value'] == ''){
-                    echo $validation['address']['value'];
-                }
-                else{
-                    echo $validation['address']['message'];
-                }?>"/>
-            </div>
+            <?php
+                 displayTextField('email', $validation, EMAIL);
+                 displayTextField('postalCode', $validation, POSTAL_CODE);
+                 displayTextField('address', $validation, ADDRESS);
+             ?>
+            
             <div <?php if(!array_key_exists('gender', $_POST) && $_SERVER['REQUEST_METHOD'] === 'POST'){echo "class=invalid";}?>>
                 <label for="gender" >Gender:
                     <input type="radio" name="gender" value="male" <?php if( $validation['sexe']['value']=='male'){echo CHECKED_ATTR;}?>/>Male

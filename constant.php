@@ -29,6 +29,15 @@ define('SELECTED_ATTR', 'selected="selected"');
 //pour contact.php
 define('PREMIER_VALEUR', 0);
 define('LONGUEUR_CHAMP', 2);
+define('EMAIL', 'email');
+define('POSTAL_CODE', 'postalCode');
+define('ADDRESS', 'address');
+define('SEXE', 'sexe');
+define('LOCATION', 'location');
+define('VALUE', 'value');
+define('IS_VALID','is_valid');
+define('MESSAGE', 'message');
+define('GENDER', 'gender');
 
 //pour private_page.php
 define('TOTAL_INITIAL', 0);
