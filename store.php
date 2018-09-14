@@ -8,7 +8,6 @@ $pageName = STORE_PAGE_NAME;
 $top_view = TOP_VIEW_PATH;
 require("$top_view");
 
-define('ONE_DAY_IN_SEC', 24*60*60);
 
 if(array_key_exists('submitSearch', $_GET)){
     header('Location:store.php');
@@ -39,7 +38,6 @@ if(array_key_exists('books', $_GET)){
     setcookie('books', 'view_yes', time() + ONE_DAY_IN_SEC);
 }
 
-define('CHECKED_ATTR', 'checked="checked"');
 
 require_once("function/loginout.php");
 
@@ -57,7 +55,7 @@ if(array_key_exists('action', $_POST) && array_key_exists('wandName', $_POST)){
             $cart[$_POST['wandName']]++;
 
         }
-        else if($_POST['action'] == '-' && $cart[$_POST['wandName']] > 0){
+        else if($_POST['action'] == '-' && $cart[$_POST['wandName']] > ZERO_QUANTITY){
             $cart[$_POST['wandName']]--;
         }
     }
@@ -73,7 +71,7 @@ if(array_key_exists('action', $_POST) && array_key_exists('broomName', $_POST)){
         if($_POST['action'] == '+'){
             $cart[$_POST['broomName']]++;
         }
-        else if($_POST['action'] == '-' && $cart[$_POST['broomName']] > 0){
+        else if($_POST['action'] == '-' && $cart[$_POST['broomName']] > ZERO_QUANTITY){
             $cart[$_POST['broomName']]--;
         }
     }
@@ -89,7 +87,7 @@ if(array_key_exists('action', $_POST) && array_key_exists('bookName', $_POST)){
         if($_POST['action'] == '+'){
             $cart[$_POST['bookName']]++;
         }
-        else if($_POST['action'] == '-' && $cart[$_POST['bookName']] > 0){
+        else if($_POST['action'] == '-' && $cart[$_POST['bookName']] > ZERO_QUANTITY){
             $cart[$_POST['bookName']]--;
         }
     }

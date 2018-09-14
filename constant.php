@@ -22,4 +22,19 @@ define('BOTTOM_VIEW_PATH','views/bottom_view.php');
 define('LIMIT_WORDS_DESCRIPTION', 40);
 define('LIMIT_CHAR_DESCRIPTION', 300);
 
+define('CHECKED_ATTR', 'checked="checked"');
+define('SELECTED_ATTR', 'selected="selected"');
+
+
+//pour contact.php
+define('PREMIER_VALEUR', 0);
+define('LONGUEUR_CHAMP', 2);
+
+//pour private_page.php
+define('TOTAL_INITIAL', 0);
+define('STRING_BROOM_POSITION', 0);
+
+//pour store.php
+define('ONE_DAY_IN_SEC', 24*60*60);
+define('ZERO_QUANTITY', 0);
 ?>

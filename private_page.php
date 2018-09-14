@@ -38,7 +38,7 @@ require("$top_view");
     <?php }?>
     <?php
         if(array_key_exists('cart', $_SESSION)) {
-            $totalPriceCart = 0;
+            $totalPriceCart = TOTAL_INITIAL;
             foreach($_SESSION['cart'] as $key => $value){
                 foreach($wands as $wandName => $details) {
                     if ($wandName != 'description' &&$key == $details['name']) {
@@ -57,7 +57,7 @@ require("$top_view");
                 }
             }
 
-            if ($totalPriceCart > 0) {
+            if ($totalPriceCart > TOTAL_INITIAL) {
                 echo "<p>Total Price: " . $totalPriceCart . " Gold Coins</p>";
             }
 
@@ -126,7 +126,7 @@ require("$top_view");
 
             if ($FlyingCoursePresentOrNot) {
                 for ($i = 0; $i < $arraySize; $i++) {
-                    if (strpos($arraySession[$i], 'Broom') === 0) {
+                    if (strpos($arraySession[$i], 'Broom') === STRING_BROOM_POSITION) {
                         $broomPresentOrNot = true;
                     }
                 }

@@ -4,14 +4,12 @@
 
 
 require_once("constant.php");
+require_once("function/functions_for_contact_page.php");
 
 $top_view = TOP_VIEW_PATH;
 
 $pageName = CONTACT_PAGE_NAME;
 require("$top_view");
-
-
-
 
 
 $validation = array(
@@ -46,21 +44,17 @@ $validation = array(
 // Faire la validation champ par champ
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Valider champ par champ
-    if (array_key_exists('email', $_POST)) {
-        $validation['email']['value'] = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-        $validation['email']['is_valid'] = strlen($validation['email']['value']) >= 2 &&  $validation['email']['value'] !=
-            $validation['email']['message'] ;
-    }
+    enterValidTextField($validation, 'email');
 
     if (array_key_exists('postalCode', $_POST)) {
         $validation['postalCode']['value'] = filter_input(INPUT_POST, 'postalCode', FILTER_SANITIZE_STRING);
-        $validation['postalCode']['is_valid'] = strlen($validation['postalCode']['value']) >= 2 &&  $validation['postalCode']['value'] !=
+        $validation['postalCode']['is_valid'] = strlen($validation['postalCode']['value']) >= LONGUEUR_CHAMP && $validation['postalCode']['value'] !=
             $validation['postalCode']['message'] ;
     }
 
     if (array_key_exists('address', $_POST)) {
         $validation['address']['value'] = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
-        $validation['address']['is_valid'] = strlen($validation['address']['value']) >= 2&&  $validation['address']['value'] !=
+        $validation['address']['is_valid'] = strlen($validation['address']['value']) >= LONGUEUR_CHAMP && $validation['address']['value'] !=
             $validation['address']['message'] ;
     }
 
@@ -71,9 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // enregister DB puis redirection
     }
 }
-
-
-define('CHECKED_ATTR', 'checked="checked"');
 
 
 if(array_key_exists('gender', $_POST)){
@@ -94,15 +85,13 @@ $countries = array(
 
 );
 
-define('SELECTED_ATTR', 'selected="selected"');
-
 
 
 if(array_key_exists('location', $_POST))
 {
 
-    if($_POST['location'][0] != 'Choose' ){
-        $validation['location']['value'] = $_POST['location'][0];
+    if($_POST['location'][PREMIER_VALEUR] != 'Choose' ){
+        $validation['location']['value'] = $_POST['location'][PREMIER_VALEUR];
         $validation['location']['is_valid'] = true;
     }
 
