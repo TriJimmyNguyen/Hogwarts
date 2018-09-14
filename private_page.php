@@ -65,8 +65,7 @@ require("$top_view");
 
     ?>
     <h4>Stuff you have to buy</h4>
-    <?php
-        var_dump($_SESSION['cart']);
+    <?ph
         $wandPresentOrNot = false;
         if(array_key_exists('cart', $_SESSION)) {
             foreach ($wands as $wandName => $details) {
