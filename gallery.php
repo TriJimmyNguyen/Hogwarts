@@ -1,5 +1,6 @@
 <?php
 
+//Variable storant tous les images path de la gallerie et une description
 $galleryPictures = array(
     'ballroom' => array(
         'imagePath' => "images/gallery_ballroom.jpg",
@@ -56,6 +57,7 @@ require("$top_view");
 
 <h2><?= $pageName?></h2>
 <main id="gallerie">
+    <!--Notre gallery implementer avec une lightbox    -->
     <?php foreach($galleryPictures as $key => $value){?>
         <a href="#<?= $key . "_lightbox" ?>"><!--
          --><img src="<?= $value['imagePath']?>" alt="<?= $value['description']?>"/><!--

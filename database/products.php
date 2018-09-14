@@ -1,5 +1,7 @@
 <?php
 
+//Notre page de produit
+
 $wands = array(
     'description' => "A wand is a quasi-sentient magical instrument through which a witch or wizardchannels her or his magical powers to centralise the effects for more complex results. Most spells are done with the aid of wands, but spells can be cast without the use of wands. Wandless magic is, however, very difficult and requires much concentration and incredible skill; advanced wizards and some magical creatures such as house elves are known to perform such magic.
 Wands are manufactured and sold by wandmakers, the most famous of these in Great Britain being Ollivander, and in Eastern Europe Gregorovitch. Each wand consists of a specific type of wood that surrounds a core of magical substance. Although the wand cores may come from the same creature, or the wood may come from the same tree, no two existing wands are exactly alike. The study of the history and the magical properties of wands is called wandlore.",

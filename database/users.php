@@ -1,5 +1,6 @@
 <?php
 
+//Les differents users qui peuvent se connecter dans le site
 
 $users = array(
     'harry' => array(

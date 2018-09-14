@@ -64,8 +64,8 @@ function displayWands(){
                             }
                          }
 
-                        echo '<p>Description:' . $description . '</p>';
-                        echo '<p>Price:' . $details['price'] . '<img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>';
+                        echo '<p>Description: ' . $description . '</p>';
+                        echo '<p>Price: ' . $details['price'] . '<img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>';
                         echo '<img src="' . $details['imagePath'] . '"' .  'alt="' . $details['name'] . '" class="productPicture"/>';
                         if(user_is_logged()){
                            displayAddRemove('wandName', $details['name']);
@@ -103,8 +103,8 @@ function displayBrooms()
                     }
                 }
 
-                echo '<p>Description:' . $description . '</p>';
-                echo '<p>Price:' . $details['price'] . '<img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>';
+                echo '<p>Description: ' . $description . '</p>';
+                echo '<p>Price: ' . $details['price'] . '<img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>';
                 echo '<img src="' . $details['imagePath'] . '"' . 'alt="' . $details['name'] . '" class="productPicture"/>';
                 if (user_is_logged()) {
                     displayAddRemove('broomName', $details['name']);
@@ -142,8 +142,8 @@ function displayBooks()
                     }
                 }
 
-                echo '<p>Description:' . $description . '</p>';
-                echo '<p>Price:' . $details['price'] . '<img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>';
+                echo '<p>Description: ' . $description . '</p>';
+                echo '<p>Price: ' . $details['price'] . '<img src="images/gold_coin.jpg" alt="gold_coin.jpg"/></p>';
                 echo '<img src="' . $details['imagePath'] . '"' . 'alt="' . $details['name'] . '" class="productPicture"/>';
                 if (user_is_logged()) {
                     displayAddRemove('bookName', $details['name']);

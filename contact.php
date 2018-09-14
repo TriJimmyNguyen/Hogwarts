@@ -81,11 +81,13 @@ validLocation($validation);
     <form method="post" action="<?= $_SERVER['PHP_SELF']?>">
         <form id="formulaire_inscription" method="post">
             <?php
+                //3 champ de texte
                  displayTextField('email', $validation, EMAIL);
                  displayTextField('postalCode', $validation, POSTAL_CODE);
                  displayTextField('address', $validation, ADDRESS);
              ?>
 
+            <!--les radio buttons           -->
             <div <?php if(!array_key_exists('gender', $_POST) && $_SERVER['REQUEST_METHOD'] === 'POST'){echo "class=invalid";}?>>
                 <label for="gender" >Gender:
                     <input type="radio" name="gender" value="male" <?php if( $validation['sexe']['value']=='male'){echo CHECKED_ATTR;}?>/>Male
@@ -93,16 +95,19 @@ validLocation($validation);
                     <input type="radio" name="gender" value="other" <?php if( $validation['sexe']['value']=='other'){echo CHECKED_ATTR;}?>/>Other
                 </label>
             </div>
-            <div <?php if(!$validation['location']['is_valid'] && $_SERVER['REQUEST_METHOD'] === 'POST'){echo "class=invalid";}?>>
 
-                    <label for="location">Choose your country: </label>
-                    <select name="location[]" id="location">
-                        <?php foreach($countries as $key) { ?>
-                            <option value="<?= $key?>" <?php echo ($key == $validation['location']['value']? SELECTED_ATTR : " ");?>><?= $key?></option>
-                        <?php }?>
-                    </select>
+            <!--Le champ select            -->
+            <div <?php if(!$validation['location']['is_valid'] && $_SERVER['REQUEST_METHOD'] === 'POST'){echo "class=invalid";}?>>
+                <label for="location">Choose your country: </label>
+                <select name="location[]" id="location">
+                    <?php foreach($countries as $key) { ?>
+                        <option value="<?= $key?>" <?php echo ($key == $validation['location']['value']? SELECTED_ATTR : " ");?>><?= $key?></option>
+                    <?php }?>
+                </select>
 
             </div>
+
+            <!--Le boutton submit  -->
             <div>
                 <input type="submit" value="subscribe"/>
             </div>

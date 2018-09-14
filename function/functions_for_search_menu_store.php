@@ -1,5 +1,6 @@
 <?php
 
+//Fonction utiliser par le menu dans la page store, utilisation de cookie
 function setCookieForSearchMenu(){
     if(array_key_exists('submitSearch', $_GET)){
         header('Location:store.php');
