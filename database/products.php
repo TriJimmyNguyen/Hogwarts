@@ -135,7 +135,7 @@ Ilvermorny began teaching the subject in the 17th century. Also Harry Potterwoul
     ),
     'bookMuggleStudies' => array(
         'name' => "Book for Muggle Studies",
-        'description' => "Muggle Studies is an elective class and part of the non-magical studies curriculum at Hogwarts School of Witchcraft and Wizardry. It is exactly what the name implies — the study of the daily lives of Muggles and how they cope with electricity, technology and science, and not magic.
+        'description' => "Muggle Studies is an elective class and part of the non-magical studies curriculum at Hogwarts School of Witchcraft and Wizardry. It is exactly what the name implies the study of the daily lives of Muggles and how they cope with electricity, technology and science, and not magic.
 The subject was made compulsory in 1997 by Lord Voldemort, and instead of facts being taught regarding muggles the class was used to spread prejudice and lies.
 ",
         'course' => "Muggle Studies",
